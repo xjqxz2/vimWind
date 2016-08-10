@@ -1,0 +1,48 @@
+let mapleader = ","
+
+"将 tab 键换成4个空格
+let softtabstop=4
+
+"不想用而关闭的插件
+call janus#disable_plugin('vimwiki')
+call janus#disable_plugin('unimpaired')
+call janus#disable_plugin('snipmate')
+
+"显示状态栏
+set laststatus=2
+
+"定义基本切换的热键
+nnoremap <Leader>ww <C-w><C-w>
+noremap <silent> <C-left> :bprev<CR>
+noremap <silent> <C-h> :bprev<CR>
+noremap <silent> <C-right> :bnext<CR>
+noremap <silent> <C-l> :bnext<CR>
+
+
+"方块的光标
+set guicursor=i:block
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_b = '%{strftime("%c")}'
+"let g:airline_powerline_fonts = 1
+let g:airline_enable_branch=1
+let g:airline_enable_syntastic=1
+let g:airline_detect_paste=1
+"let g:airline_theme='molokai'
+
+"配置 bClose
+nnoremap <silent> <Leader>q :Bclose<CR>
+
+"复制粘贴剪切板
+map <Leader>c "+y
+map <Leader>v "+gP
+
+"YCM
+let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let g:UltiSnipsEditSplit="vertical"
